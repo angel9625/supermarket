@@ -14,12 +14,12 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="scss">
 .nav-bar{
     display: flex;
     height: 1.2rem;
     line-height: 1.2rem;
-    text-align: center;
+    text-align: center;  
     box-shadow: 0 0.03rem 0.05rem rgba(0, 0, 0, 0.3);
 }
 .left,.right{

@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .tab-bar-item{
         font-size: 0.4rem;
         text-align: center;

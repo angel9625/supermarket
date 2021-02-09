@@ -1,16 +1,47 @@
 <template>
   <div id="Category">
-      分类
+     <div class="wrapper">
+         <ul class="content">
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+         </ul>
+     </div>
   </div>
 </template>
 
 <script>
+import BScroll from "better-scroll";
 export default {
-    name:'Category'
+    name:'Category',
+    mounted(){
+      let scroll = new BScroll(document.querySelector('.wrapper'));
+    }
 
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.wraper{
+  width: 90%;
+  height: 3rem;
+  margin: 3rem auto;
+  background-color: red;
+  overflow: hidden;
+}
 </style>

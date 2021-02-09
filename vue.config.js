@@ -11,7 +11,14 @@ module.exports = {
         'views': '@/views',
       }
     }
-  }
+  },
+  //配置全局scss样式
+	css: {
+		loaderOptions: {
+			scss: {
+				additionalData: `@import "@/assets/styles/style.scss";`
+			}
+		}
+	}
 
-  
 }

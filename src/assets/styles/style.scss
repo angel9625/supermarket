@@ -1,0 +1,8 @@
+$main-color:rgb(255, 129, 152);//主色，粉色
+// 常用flex布局方式
+@mixin pri-flex($flex-direction:row,$justify-content:center,$align-items:center){
+    display: flex;
+    flex-direction:$flex-direction;
+    justify-content:$justify-content;
+    align-items:$align-items;
+}

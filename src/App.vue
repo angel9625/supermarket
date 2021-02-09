@@ -6,7 +6,7 @@
 
 <script>
 import TabBar from 'components/common/tabbar/TabBar'
-import MainTabBar from './components/content/MainTabBar.vue'
+import MainTabBar from './components/content/maintabbar/MainTabBar'
 
 export default {
   name:'App',
@@ -17,8 +17,8 @@ export default {
   
 }
 
-    TabBar</script>
+</script>
 
-<style lang="less">
+<style lang="scss">
 
 </style>
