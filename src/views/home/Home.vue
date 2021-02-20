@@ -4,7 +4,8 @@
     <nav-bar class="home-nav">
       <div slot="center">购物车</div>
     </nav-bar>
-    <!-- 设置轮播 -->
+    <better-scroll class="wrapper">
+      <!-- 设置轮播 -->
     <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(image, index) in banners" :key="index">
         <a :href="image.link">
@@ -20,69 +21,8 @@
     <tab-control class="tab-control" :titles="['流行','新款','精选']" @tabClick="tabClick"></tab-control>
     <!-- 商品列表 -->
     <good-list :goods="goods[currenttype].list"></good-list>
-
-    <ul>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-    </ul>
+    </better-scroll>
+    
   </div>
 </template>
 
@@ -96,6 +36,7 @@ import TabControl from 'components/content/tabcontrol/TabControl.vue';
 import RecommendView from './childComps/RecommendView.vue';
 import FeatrueView from './childComps/FeatrueView.vue';
 import GoodList from '../../components/content/goodslist/GoodList.vue';
+import BetterScroll from '../../components/common/better scroll/BetterScroll.vue';
 
 export default {
   name: "Home",
@@ -105,6 +46,7 @@ export default {
     FeatrueView,
     TabControl,
     GoodList,
+    BetterScroll,
   },
   data() {
     return {
@@ -182,7 +124,7 @@ export default {
   left: 0;
   right: 0;
   top: 0;
-  // z-index: 1.2;
+  z-index: 2;
 }
 // 设置轮播样式
   .van-swipe-item {

@@ -20,27 +20,61 @@
            <li>商品列表</li>
            <li>商品列表</li>
            <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
+           <li>商品列表</li>
          </ul>
      </div>
   </div>
 </template>
 
 <script>
-import BScroll from "better-scroll";
+import BScroll from "@better-scroll/core"
 export default {
     name:'Category',
     mounted(){
-      let scroll = new BScroll(document.querySelector('.wrapper'));
+      let bs = new BScroll('.wrapper');
     }
-
 }
 </script>
 
 <style lang="scss">
-.wraper{
-  width: 90%;
+.wrapper{
+  width: 90%; 
   height: 3rem;
-  margin: 3rem auto;
   background-color: red;
   overflow: hidden;
 }
