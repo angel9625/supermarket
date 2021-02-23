@@ -1,6 +1,5 @@
 <template>
 <div>
-    <router-view></router-view>
     <tab-bar>
         <tab-bar-item path="/home">
             <img slot="item-icon" src="~assets/img/tabbar/home/home.svg">

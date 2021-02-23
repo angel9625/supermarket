@@ -1,3 +1,4 @@
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
@@ -6,16 +7,23 @@ const Home = () => import('../views/home/Home.vue')
 const ShopCart = () => import('../views/cart/ShopCart.vue')
 const Category = () => import('../views/category/Category.vue')
 const Profile = () => import('../views/profile/Profile.vue')
+const Detail = () =>import('../views/detail/Detail.vue')
 
 
 const routes = [
   {
     path:'',
-    redirect:'/home'
+    redirect:'/home',
+    meta:{
+      keepAlive:true
+    }
   },
   {
     path:'/home',
-    component:Home
+    component:Home,
+    meta:{
+      keepAlive:true
+    }
   },
   {
     path:'/category',
@@ -28,6 +36,10 @@ const routes = [
   {
     path:'/profile',
     component:Profile
+  },
+  {
+    path:'/detail/:iid',
+    component:Detail
   }
 
   

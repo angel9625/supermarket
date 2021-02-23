@@ -1,6 +1,4 @@
 import axios from 'axios'
-
-
 // export function request(config){
 //     return new Promise((resolve,reject) => {
 //         // 创建axois实例
@@ -23,7 +21,6 @@ import axios from 'axios'
 //     console.log(err);
 // })
 
-
 // // 发送真正的网络请求
 // instance(config)
 // .then(res => {
@@ -34,8 +31,6 @@ import axios from 'axios'
 // })
 // })
 // }
-
-
 
 // 方式二
 export function request(config){

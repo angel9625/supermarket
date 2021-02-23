@@ -1,5 +1,5 @@
 <template>
-  <div class="goodlist-item">
+  <div class="goodlist-item" @click="btnClick">
       <img :src="gooditem.show.img">
       <div class="item-info">
           <div class="item-title">{{gooditem.title}}</div>
@@ -7,8 +7,7 @@
              <span class="item-price">{{gooditem.price}}</span>
              <img src="~assets/img/common/collect.svg">
              <span class="item-star">{{gooditem.cfav}}</span> 
-          </div>
-          
+          </div>         
       </div>
   </div>
 </template>
@@ -22,6 +21,11 @@ export default {
             default(){
                 return {}
             }
+        }
+    },
+    methods:{
+        btnClick(){
+            this.$router.push('/detail/' + this.gooditem.iid);
         }
     }
 }

@@ -4,7 +4,6 @@
     <nav-bar class="home-nav">
       <div slot="center">购物车</div>
     </nav-bar>
-    <better-scroll class="wrapper">
       <!-- 设置轮播 -->
     <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(image, index) in banners" :key="index">
@@ -20,9 +19,8 @@
     <!-- 页卡 -->
     <tab-control class="tab-control" :titles="['流行','新款','精选']" @tabClick="tabClick"></tab-control>
     <!-- 商品列表 -->
-    <good-list :goods="goods[currenttype].list"></good-list>
-    </better-scroll>
-    
+    <good-list :goods="goods[currenttype].list"></good-list> 
+    <back-top></back-top>
   </div>
 </template>
 
@@ -36,7 +34,7 @@ import TabControl from 'components/content/tabcontrol/TabControl.vue';
 import RecommendView from './childComps/RecommendView.vue';
 import FeatrueView from './childComps/FeatrueView.vue';
 import GoodList from '../../components/content/goodslist/GoodList.vue';
-import BetterScroll from '../../components/common/better scroll/BetterScroll.vue';
+import BackTop from '../../components/content/backtop/BackTop';
 
 export default {
   name: "Home",
@@ -46,19 +44,19 @@ export default {
     FeatrueView,
     TabControl,
     GoodList,
-    BetterScroll,
+    BackTop
   },
   data() {
     return {
       banners: [],
       recommends: [],
-      goods:{
+      goods:{ 
         'pop':{page:0,list:[]},
         'new':{page:0,list:[]},
         'sell':{page:0,list:[]},
       },
       currenttype:'pop',
-
+      saveY:0
     };
   },
   created() {
@@ -66,7 +64,16 @@ export default {
     this.getGoods('pop');
     this.getGoods('new');
     this.getGoods('sell');
-
+  },
+  mounted(){
+      // 监听滚动到底部
+    window.addEventListener("scroll",this.handleScroll);
+  },
+  activated(){
+    window.scrollTo(10,this.saveY);
+  },
+  deactivated(){
+    console.log(this.saveY);
   },
   methods:{
     /*
@@ -88,6 +95,10 @@ export default {
         this.goods[type].page += 1;
       } )
     },
+    // 上拉加载更多商品列表
+    loadMore(){
+      this.getGoods(this.currenttype);
+    },
 
     /*
     *监听事件相关方法
@@ -105,16 +116,23 @@ export default {
           this.currenttype = 'sell';
           break;
       }
-
-    }
-    
+    },
+    handleScroll(){
+      let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      this.saveY = scrollTop;
+      let windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      let scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+      if(scrollTop + windowHeight == scrollHeight){
+        this.loadMore();
+      }     
+    } 
   }
 };
 </script>
 
 <style lang="scss">
 #Home{
-  padding-top: 1.2rem;
+  padding: 1.2rem 0 0.5rem 0;
 }
 .home-nav {
   font-size: 0.5rem;
