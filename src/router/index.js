@@ -15,27 +15,36 @@ const routes = [
     path:'',
     redirect:'/home',
     meta:{
-      keepAlive:true
+      showTab:true
     }
   },
   {
     path:'/home',
     component:Home,
     meta:{
-      keepAlive:true
+      showTab:true
     }
   },
   {
     path:'/category',
-    component:Category
+    component:Category,
+    meta:{
+      showTab:true
+    }
   },
   {
     path:'/shopcart',
-    component:ShopCart
+    component:ShopCart,
+    meta:{
+      showTab:true
+    }
   },
   {
     path:'/profile',
-    component:Profile
+    component:Profile,
+    meta:{
+      showTab:true
+    }
   },
   {
     path:'/detail/:iid',

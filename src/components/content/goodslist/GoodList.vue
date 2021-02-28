@@ -10,16 +10,13 @@ export default {
   components: { GoodListItem },
     name:"GoodList",
     props:{
-        goods:{
-            type:Array,
-            default(){
-                return []
-            }
+        goods:{}
+            // // type:Array,
+            // // default(){
+            // //     return []
+            // }
         }
     }
-
-
-}
 </script>
 
 <style lang="scss">

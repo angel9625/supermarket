@@ -1,17 +1,9 @@
 <template>
   <div id="Home">
-    <!-- 头部栏 -->
-    <nav-bar class="home-nav">
-      <div slot="center">购物车</div>
-    </nav-bar>
-      <!-- 设置轮播 -->
-    <van-swipe :autoplay="3000">
-      <van-swipe-item v-for="(image, index) in banners" :key="index">
-        <a :href="image.link">
-          <img :src="image.image" />
-        </a>
-      </van-swipe-item>
-    </van-swipe>
+    <!-- 顶部栏 -->
+    <nav-bar class="home-nav"><div slot="center">购物车</div></nav-bar>
+    <!-- 设置轮播 -->
+    <home-swiper :images="banners"></home-swiper>
     <!-- 推荐信息的展示 -->
     <recommend-view :recommends="recommends"></recommend-view>
     <!-- 中间的图片 -->
@@ -20,6 +12,7 @@
     <tab-control class="tab-control" :titles="['流行','新款','精选']" @tabClick="tabClick"></tab-control>
     <!-- 商品列表 -->
     <good-list :goods="goods[currenttype].list"></good-list> 
+    <!-- 返回顶部 -->
     <back-top></back-top>
   </div>
 </template>
@@ -30,11 +23,14 @@ import {getHomeMultidata,getGoods} from "network/home.js";
 // 公共组件
 import NavBar from "components/common/navbar/NavBar.vue";
 import TabControl from 'components/content/tabcontrol/TabControl.vue';
+import BackTop from '../../components/content/backtop/BackTop';
+import HomeSwiper from 'views/home/childComps/HomeSwiper.vue';
 // 子组件
 import RecommendView from './childComps/RecommendView.vue';
 import FeatrueView from './childComps/FeatrueView.vue';
 import GoodList from '../../components/content/goodslist/GoodList.vue';
-import BackTop from '../../components/content/backtop/BackTop';
+
+
 
 export default {
   name: "Home",
@@ -44,7 +40,8 @@ export default {
     FeatrueView,
     TabControl,
     GoodList,
-    BackTop
+    BackTop,
+    HomeSwiper
   },
   data() {
     return {
@@ -144,13 +141,6 @@ export default {
   top: 0;
   z-index: 2;
 }
-// 设置轮播样式
-  .van-swipe-item {
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
 .tab-control{
   position: sticky;
   top: 1.1rem;

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import NavBar from './NavBar.vue'
+import NavBar from 'components/common/navbar/NavBar.vue'
 export default {
   components: { NavBar },
     name:'DetailNavBar',
@@ -34,6 +34,7 @@ export default {
 
 <style lang="scss" scoped>
 .detail-nav{
+  font-size: 0.4rem;
   img{
     width: 0.5rem;
     height: 0.5rem;
