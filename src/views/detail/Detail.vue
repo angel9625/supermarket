@@ -16,6 +16,8 @@
   <detail-comment-info :commentInfo="commentInfo"></detail-comment-info>
   <!-- 推荐商品 -->
   <good-list :goods="recommends"></good-list>
+  <!-- 底部栏 -->
+  <detail-bottom-bar @addCart="addCart"></detail-bottom-bar>
 </div>
 </template>
 
@@ -29,6 +31,7 @@ import DetailGoodsDetailInfo from './DetailComps/DetailGoodsDetailInfo.vue';
 import DetailGoodsParams from './DetailComps/DetailGoodsParams.vue';
 import DetailCommentInfo from './DetailComps/DetailCommentInfo.vue';
 import GoodList from '../../components/content/goodslist/GoodList.vue';
+import DetailBottomBar from './DetailComps/DetailBottomBar';
 
 
 export default {
@@ -42,7 +45,8 @@ export default {
         DetailGoodsParams,
         DetailCommentInfo,
         getRecommends,
-        GoodList
+        GoodList,
+        DetailBottomBar
     },
     data(){
       return{
@@ -86,6 +90,17 @@ export default {
           console.log(res);
           this.recommends = res.data.list;
         })
+    },
+    methods:{
+      addCart(){
+        const product = {};
+        product.iid = this.iid;
+        product.title = this.goods.title;
+        product.image = this.topImages[0];
+        product.desc = this.goods.desc;
+        product.price = this.goods.realPrice;
+        this.$store.dispatch('addCart',product);
+      }
     }
 }
 </script>
@@ -93,6 +108,7 @@ export default {
 <style lang="scss" scoped>
 #detail{
   padding:1.2rem 0;
+  overflow: y;
   .detail-nav{
     position: fixed;
     left: 0;

@@ -1,7 +1,7 @@
 <template>
   <div id="Home">
     <!-- 顶部栏 -->
-    <nav-bar class="home-nav"><div slot="center">购物车</div></nav-bar>
+    <nav-bar class="home-nav"><div slot="center">购物街</div></nav-bar>
     <!-- 设置轮播 -->
     <home-swiper :images="banners"></home-swiper>
     <!-- 推荐信息的展示 -->
