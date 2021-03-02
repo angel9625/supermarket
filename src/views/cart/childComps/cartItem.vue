@@ -8,8 +8,7 @@
         <div class="pc">
             <span class="price"></span>
             <span class="count"></span>
-        </div>
-        
+        </div>       
     </div>
 </div>
   
