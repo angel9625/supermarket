@@ -1,16 +1,23 @@
 <template>
   <div id="ShopCart">
-      <nav-bar class="cart-nav"><div slot="center">购物车</div></nav-bar>
+      <nav-bar class="cart-nav"><div slot="center">购物车({{showCartLength}})</div></nav-bar>
       <cart-item></cart-item>
+      <bottom-bar></bottom-bar>
   </div>
 </template>
 
 <script>
 import NavBar from '../../components/common/navbar/NavBar.vue'
+import BottomBar from './childComps/bottomBar.vue';
 import CartItem from './childComps/cartItem.vue'
 export default {
-  components: { NavBar, CartItem },
-    name:'ShopCart'
+  components: { NavBar, CartItem, BottomBar },
+    name:'ShopCart',
+    computed:{
+      showCartLength(){
+        return this.$store.state.cartList.length;
+      }
+    }
 
 }
 </script>

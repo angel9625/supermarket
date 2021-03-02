@@ -3,6 +3,7 @@
         payload.count ++ ;
      },
      addToCart(state,payload){
-      state.cartList.push(payload);
+        payload.checked = true;
+        state.cartList.push(payload);
      }
  }

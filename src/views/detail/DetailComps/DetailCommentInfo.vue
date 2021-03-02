@@ -6,7 +6,7 @@
     </div>
     <div class="detail-comment">
         <div class="top">
-            <img :src="commentInfo.user.avatar">
+            <img v-if="commentInfo.user.avatar" :src="commentInfo.user.avatar">
             <span>{{commentInfo.user.uname}}</span>
         </div>
         <p class="content">{{commentInfo.content}}</p>

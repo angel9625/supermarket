@@ -87,7 +87,6 @@ export default {
       })
        //3、 获取推荐商品
         getRecommends().then(res => {
-          console.log(res);
           this.recommends = res.data.list;
         })
     },
